@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Social</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <div class="left">
+  <a href="/"><i class="fa fa-home" aria-hidden="true">Home</i></a>
+   </div>
+  <div class="mid">
+  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  </div>
+
+  <div class="right">
+    <% if user_signed_in? %>
+        <%= current_user.email %>
+
+
+        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+
+    <% end %>
+  </div>
+	
+</header>
+
+<section id="mainSection" id="top">
+  <aside id="mainAside">
+  </aside>
+  <main id="mainMain"><%= yield %></main>
+</section>
+<footer>@copyright</footer>
+
+</body>
+</html>

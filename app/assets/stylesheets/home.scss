@@ -1,0 +1,46 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.create_tweet{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+
+}
+
+div.tweet{
+	padding:0px 0px 0px 0px;
+    margin:10px 0px 10px 0px;
+    display:flex;
+    background-color:#e1e8ed;
+    box-sizing:border-box;
+
+}
+ul{
+	list-style-type:none;
+}
+
+div.tweet > .left_content{
+
+	padding-top:10px;
+    padding-left:10px;
+	box-sizing:border-box;
+}
+div.tweet > .right_content{
+
+	margin:10px;
+	padding-top:10px;
+    padding-left:10px;
+	box-sizing:border-box;
+}
+
+
+.time{
+	font-size: 13px;
+    color: #657786;
+}
+
+div.right > div.reaction{
+text-decoration: none;
+}

@@ -1,0 +1,16 @@
+
+<div class="create_tweet">
+<%= form_tag '/create' do%>
+<%= text_area_tag :content,@content,:size =>"80x4", :placeholder => 'Add your Story Here'%><br>
+<%= submit_tag 'Tweet'%>
+<%end%>
+</div>
+
+
+<% if @tweet%>
+    <ul>
+	<% @tweet.each do |tweet|%>
+	<li><%= render 'tweet',:tweet=>tweet%></li>
+	<%end%>
+	</ul>
+<%end%>

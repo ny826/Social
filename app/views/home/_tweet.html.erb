@@ -1,0 +1,42 @@
+<div class="tweet">
+
+<div class="image_left">
+	<img src="https://avatars1.githubusercontent.com/u/25134359?v=3&u=a4831520044d7fe564cc9557f9d0e155dd29bdbe&s=400">
+</div>
+
+<div class="right_content">
+<%user=User.where(:id=>tweet.user_id).first%>
+<% print " user is: #{user}"%>
+<%= user.email%>
+<div class="time"><%= tweet.created_at.to_formatted_s(:short)%>	</div>
+<br>
+
+<%= tweet.content%><br>
+
+<div class="reaction">
+<% if countlike=Like.where(:tweet_id=>tweet.id)%>
+<%= countlike.count%>
+<%end%>
+
+<%if !Like.where(:user_id=>current_user.id,:tweet_id=>tweet.id).first%>
+   <%= link_to "Like", url_for(controller: :home, action: :like, tweet_id: tweet.id), method: :post %> 
+<%else%>
+<%= link_to "Unlike", url_for(controller: :home, action: :like, tweet_id: tweet.id), method: :post %> 
+<%end%>
+
+<% if current_user.id==tweet.user_id%>
+	<%= link_to "Edit", url_for(controller: :home, action: :edit, tweet_id: tweet.id), method: :post %> 
+<%= link_to "Delete", url_for(controller: :home, action: :delete, tweet_id: tweet.id), method: :post %> 
+<%end%>
+	
+</div>
+</div>
+
+</div>
+
+ <style type="text/css">
+ 	img{
+ 		width: 100px;
+ 		height: 100px;
+ 	}
+ </style>
