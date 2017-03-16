@@ -14,14 +14,11 @@
   <div class="mid">
   <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
   </div>
-
+ 
   <div class="right">
     <% if user_signed_in? %>
         <%= current_user.email %>
-
-
         <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-
     <% end %>
   </div>
 	
@@ -32,7 +29,11 @@
   </aside>
   <main id="mainMain"><%= yield %></main>
 </section>
-<footer>@copyright</footer>
+<footer><div>@copyright</div>
+<a href="/rate">Rate Me!</a>
+<a href="/view_feedback">Already Rated!</a>
+
+</footer>
 
 </body>
 </html>

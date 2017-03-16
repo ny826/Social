@@ -1,0 +1,6 @@
+<%= form_tag '/rate_submit' do%>
+<%= text_field_tag :Name,@content,:placeholder => 'Name'%><br><br>
+<%= text_area_tag :description,@description,:placeholder => 'Add Your Experience'%><br>
+
+<%= submit_tag 'submit'%>
+<%end%>

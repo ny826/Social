@@ -5,7 +5,7 @@
 <%= submit_tag 'Tweet'%>
 <%end%>
 </div>
-
+<br>
 <div class="search">
 <%= form_tag '/search',:method => :get do%>
 <%= text_area_tag :email,@content,:size =>"80x4", :placeholder => 'Add email Here'%><br>

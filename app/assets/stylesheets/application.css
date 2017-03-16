@@ -62,8 +62,11 @@ footer{
 	position: fixed;
     bottom:0px;
 	width: 100%;
-	text-align: center;	
-	
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	box-sizing: border-box;
+	align-items: center;
 }
 
 i{

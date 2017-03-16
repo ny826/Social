@@ -20,6 +20,12 @@ Rails.application.routes.draw do
 
   post '/follow'=>'home#follow'
 
+  get '/rate'=>'home#rate'
+
+  post '/rate_submit'=>'home#rate_submit'
+
+  get '/view_feedback'=>'home#view_feedback'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

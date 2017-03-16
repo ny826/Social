@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
   
   def index
-  	@tweet=Tweet.all
+  	 @tweet=Tweet.all
     # @tweet = Tweet.includes(:user, :likes).all.order(created_at: :desc).limit(50)
     print "in index #{@tweet}"
   end
@@ -70,7 +70,22 @@ class HomeController < ApplicationController
     return redirect_to '/'
   end
 
-  def follower
-    
+ def rate
+   print "in rate ";
+ end
+ def rate_submit
+  print "in rate_submit"
+  name=params[:Name]
+  description=params[:description]
+  if !Feedback.find_by_user_id(current_user.id)
+    print "in if rate submit "
+    Feedback.create(:user_id=>current_user.id,:name=>name,:description=>description);
   end
+   return redirect_to '/'
+
+ end
+
+ def view_feedback
+ end
+
 end
