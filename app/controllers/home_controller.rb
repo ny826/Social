@@ -65,7 +65,7 @@ class HomeController < ApplicationController
       Following.create(:following_id=>user_id,:follower_id=>current_user.id)
     else
       following=Following.where(:following_id=>user_id,:follower_id=>current_user.id).first
-      follow.destroy
+      following.destroy
     end
     return redirect_to '/'
   end
@@ -78,8 +78,7 @@ class HomeController < ApplicationController
   name=params[:Name]
   description=params[:description]
   if !Feedback.find_by_user_id(current_user.id)
-    print "in if rate submit "
-    Feedback.create(:user_id=>current_user.id,:name=>name,:description=>description);
+  Feedback.create(:user_id=>current_user.id,:name=>name,:description=>description);
   end
    return redirect_to '/'
 
