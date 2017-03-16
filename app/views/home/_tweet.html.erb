@@ -11,7 +11,15 @@
 <div class="time"><%= tweet.created_at.to_formatted_s(:short)%>	</div>
 <br>
 
+<% follow=Following.where(:follower_id=>current_user.id)%>
+
+<% follow.each do |follow|%>
+
+<% if follow.following_id==tweet.user_id%>
 <%= tweet.content%><br>
+<%end%>
+	
+<%end%>
 
 <div class="reaction">
 <% if countlike=Like.where(:tweet_id=>tweet.id)%>

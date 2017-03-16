@@ -1,3 +1,5 @@
+
+
 <%= @user.email%>
 <%if !Following.where(:following_id=>@user.id,:follower_id=>current_user.id).first%>
       <%= link_to "Follow", url_for(controller: :home, action: :follow, user_id: @user.id), method: :post %>

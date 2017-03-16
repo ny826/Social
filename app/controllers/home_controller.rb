@@ -54,6 +54,8 @@ class HomeController < ApplicationController
   def search
     email=params[:email]
     print "email is : #{email}";
+
+    print "email+ naveen is #{email+"navee"}"
     @user=User.find_by_email(email)
     print "@user is:  #{@user}";
     
