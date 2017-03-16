@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   post '/edit_tweet'=>'home#edit_tweet'
 
   post '/delete'=>'home#delete'
+
+  get '/search'=>'home#search'
+
+  post '/follow'=>'home#follow'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

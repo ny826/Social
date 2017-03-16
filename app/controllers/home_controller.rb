@@ -50,9 +50,24 @@ class HomeController < ApplicationController
   tweet.destroy;
   return redirect_to '/';
   end
-
-  def following
+  
+  def search
+    email=params[:email]
+    print "email is : #{email}";
+    @user=User.find_by_email(email)
+    print "@user is:  #{@user}";
     
+  end
+
+  def follow
+    user_id=params[:user_id]
+    if !Following.where(:following_id=>user_id,:follower_id=>current_user.id).first
+      Following.create(:following_id=>user_id,:follower_id=>current_user.id)
+    else
+      following=Following.where(:following_id=>user_id,:follower_id=>current_user.id).first
+      follow.destroy
+    end
+    return redirect_to '/'
   end
 
   def follower

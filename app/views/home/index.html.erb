@@ -6,6 +6,13 @@
 <%end%>
 </div>
 
+<div class="search">
+<%= form_tag '/search',:method => :get do%>
+<%= text_area_tag :email,@content,:size =>"80x4", :placeholder => 'Add email Here'%><br>
+<%= submit_tag 'search'%>
+<%end%>
+</div>
+
 
 <% if @tweet%>
     <ul>
