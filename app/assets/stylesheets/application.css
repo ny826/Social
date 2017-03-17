@@ -35,6 +35,9 @@
  	display: flex;
  	flex-direction: column;
  }
+ div.right > div.logout{
+ 	padding-left: 150px;
+ }
 main{
 	margin-left:10px;
 	padding-top: 60px;
@@ -72,4 +75,3 @@ footer{
 i{
 	color: skyblue;
 }
-
