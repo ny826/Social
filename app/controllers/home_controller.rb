@@ -89,4 +89,8 @@ class HomeController < ApplicationController
  def view_feedback
  end
 
+def user
+  @user=User.all
+end
+
 end

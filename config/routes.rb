@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get '/rate'=>'home#rate'
 
+  get '/user'=>'home#user'
+
   post '/rate_submit'=>'home#rate_submit'
 
   get '/view_feedback'=>'home#view_feedback'

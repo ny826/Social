@@ -1,3 +1,7 @@
+<% follow=Following.where(:follower_id=>current_user.id)%>
+<% follow.each do |follow|%>
+<% if follow.following_id==tweet.user_id%>
+
 <div class="tweet">
 
 <div class="image_left">
@@ -6,20 +10,11 @@
 
 <div class="right_content">
 <%user=User.where(:id=>tweet.user_id).first%>
-<% print " user is: #{user}"%>
 <%= user.email%>
 <div class="time"><%= tweet.created_at.to_formatted_s(:short)%>	</div>
 <br>
 
-<% follow=Following.where(:follower_id=>current_user.id)%>
-
-<% follow.each do |follow|%>
-
-<% if follow.following_id==tweet.user_id%>
 <%= tweet.content%><br>
-<%end%>
-	
-<%end%>
 
 <div class="reaction">
 <% if countlike=Like.where(:tweet_id=>tweet.id)%>
@@ -41,6 +36,10 @@
 </div>
 
 </div>
+
+<%end%>
+	
+<%end%>
 
  <style type="text/css">
  	img{
