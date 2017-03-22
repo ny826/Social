@@ -3,6 +3,7 @@
 <%= form_tag '/create' do%>
 <%= text_area_tag :content,@content,:size =>"80x4", :placeholder => 'Add your Story Here'%><br>
 <%= submit_tag 'Tweet'%>
+<span id="letter"></span>
 <%end%>
 </div>
 <br>
@@ -22,4 +23,3 @@
 	</ul>
 <%end%>
 
-<%= link_to "Users", url_for(controller: :home, action: :user), method: :get %> 

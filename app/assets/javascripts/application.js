@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+window.addEventListener('load',function(){
+var content=document.getElementById('content');
+content.addEventListener('keyup',function(){
+	var letter=document.getElementById('letter');
+	letter.innerHTML=content.value.length;
+	if (content.value.length>15) {
+		letter.style.color="red";
+	}
+	else{
+		letter.style.color="black";
+	}
+})
+});

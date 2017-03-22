@@ -1,6 +1,8 @@
-<ol>
+<div class="user"><ol>
 <% @user.each do |user|%>
+<%if user.id!=current_user.id%>
 <li><%= user.email%></li>
+
 <%if !Following.where(:following_id=>user.id,:follower_id=>current_user.id).first%>
       <%= link_to "Follow", url_for(controller: :home, action: :follow, user_id: user.id), method: :post %>
     <%else   %>
@@ -8,4 +10,6 @@
     <%end%>
 <br><br>
 <%end%>
+<%end%>
 </ol>
+</div>
