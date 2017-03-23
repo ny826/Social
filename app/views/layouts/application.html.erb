@@ -50,8 +50,10 @@
 
 <footer>
 <div class="copyright">@copyright</div>
-<a  href="/rate">Rate Me!</a>
-<a  href="/view_feedback">Already Rated!</a>
+<%if user_signed_in?%>
+  <a  href="/rate">Rate Me!</a>
+  <a  href="/view_feedback">Already Rated!</a>
+<%end%>
 </footer>
 
 </body>
