@@ -37,7 +37,7 @@
     font-size: 48px;
     position: fixed;
     right: 18px;
-    bottom: 36px;
+    bottom: 40px;
     height: 37px;
     overflow: hidden;
 }
@@ -88,7 +88,7 @@ main{
 
 footer{
 	height: 40px;
-	background-color: skyblue;
+	background-color: grey;
 	position: fixed;
     bottom:0px;
 	width: 100%;
@@ -138,4 +138,8 @@ img{
 
 a{
 	text-decoration: none;
+}
+
+.copyright{
+	color: skyblue;
 }

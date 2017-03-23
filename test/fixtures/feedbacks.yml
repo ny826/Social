@@ -3,9 +3,9 @@
 one:
   user_id: 
   name: MyString
-  description: MyString
+  content: MyString
 
 two:
   user_id: 
   name: MyString
-  description: MyString
+  content: MyString

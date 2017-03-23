@@ -2,8 +2,8 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
   
   def index
-  	 @tweet=Tweet.all
-    # @tweet = Tweet.includes(:user, :likes).all.order(created_at: :desc).limit(50)
+  	 # @tweet=Tweet.all
+    @tweet = Tweet.includes(:user).all.order(created_at: :desc).limit(50)
   end
 
   def create
@@ -68,6 +68,7 @@ class HomeController < ApplicationController
 
  def rate
  end
+ 
  def rate_submit
   name=params[:Name]
   description=params[:description]
