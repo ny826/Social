@@ -1,5 +1,5 @@
 <%= form_tag '/edit_tweet' do%>
-<%= hidden_field_tag(:tweet_id=>@tweet_id)%>
+<%= hidden_field_tag :tweet_id, @tweet_id %>
 <%= text_area_tag :content,@content,:size =>"80x4", :placeholder => 'Add your Story Here'%><br>
 <%= submit_tag 'Tweet'%>
 <%end%>

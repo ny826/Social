@@ -17,7 +17,8 @@
  
   <div class="right">
     <% if user_signed_in? %>
-        <%= current_user.email %>
+        <div class="name">
+        <%= current_user.name %></div>
         <div class="logout"><%= link_to 'logout', destroy_user_session_path, method: :delete %></div>
         <%else%>
         <a href="/users/sign_in"><i class="fa f-sign-in" aria-hidden="true">Login</i></a>
@@ -36,7 +37,7 @@
   <img src="https://avatars1.githubusercontent.com/u/25134359?v=3&u=a4831520044d7fe564cc9557f9d0e155dd29bdbe&s=400">
 </div>
 <div class="follower">
-<h4>Naveen Yadav</h4><br>
+<h4><%= current_user.name%></h4><br>
   <a href="/user"><h4><%= Following.where(:follower_id=>current_user.id).length%> Following</h4></a><br>
   <a href="/user"><h4><%= Following.where(:following_id=>current_user.id).length%> Follower</h4></a><br>
 </div>
@@ -46,9 +47,10 @@
   <main id="mainMain"><%= yield %></main>
 </section>
 <footer><div>@copyright</div>
+  <% if user_signed_in?%>
 <a href="/rate">Rate Me!</a>
 <a href="/view_feedback">Already Rated!</a>
-
+<%end%>
 </footer>
 
 </body>

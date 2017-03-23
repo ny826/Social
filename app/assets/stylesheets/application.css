@@ -39,6 +39,14 @@
  }
  div.right > div.logout{
  	padding-left: 150px;
+ 	color: skyblue;
+ }
+ a:-webkit-any-link{
+ 	color:skyblue;
+ }
+ div.right > div.name{
+ 	padding-left: 150px;
+ 	color: skyblue;
  }
 main{
 	margin-left:10px;

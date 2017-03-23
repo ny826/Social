@@ -4,12 +4,10 @@ class HomeController < ApplicationController
   def index
   	 @tweet=Tweet.all
     # @tweet = Tweet.includes(:user, :likes).all.order(created_at: :desc).limit(50)
-    print "in index #{@tweet}"
   end
 
   def create
   	content=params[:content];
-  	# Tweet.create(:user=>current_user.id,:content=>content);
   	current_user.tweets.create(:content=>content);
   	return redirect_to '/';
   end
@@ -17,7 +15,6 @@ class HomeController < ApplicationController
   def like
     tweet_id=params[:tweet_id];
     like=Like.where(:user_id=>current_user.id,:tweet_id=>tweet_id).first;
-    print "like is #{like}";
     if like
       like.destroy;  
     else
@@ -28,18 +25,16 @@ class HomeController < ApplicationController
 
   def edit
   tweet_id=params[:tweet_id];
-  print "in edit tweet id is : #{tweet_id}"
   @tweet_id=tweet_id
   end
 
   def edit_tweet
-
     tweet_id=params[:tweet_id]
-    print "tweet id is : #{tweet_id}"
-    content=params[:content]
-    print "content is: #{content}"
-    tweet=Tweet.where(:id=>tweet_id);
-    tweet.content=content;
+    cont=params[:content]
+    tweet=Tweet.where(:id=>tweet_id).first;
+    tweet.content=cont;
+    tweet.save;
+    print "tweet content is #{tweet.content}"
     return redirect_to '/'
 
   end
@@ -53,11 +48,10 @@ class HomeController < ApplicationController
   
   def search
     email=params[:email]
-    print "email is : #{email}";
-
-    print "email+ naveen is #{email+"navee"}"
-    @user=User.find_by_email(email)
-    print "@user is:  #{@user}";
+    @user=User.find_by_email(email);
+    if !@user
+    return redirect_to '/'      
+    end
     
   end
 
@@ -73,10 +67,8 @@ class HomeController < ApplicationController
   end
 
  def rate
-   print "in rate ";
  end
  def rate_submit
-  print "in rate_submit"
   name=params[:Name]
   description=params[:description]
   if !Feedback.find_by_user_id(current_user.id)
