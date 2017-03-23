@@ -33,6 +33,21 @@
  	border-bottom: 1px solid black
  }
 
+.floatingTop {
+    font-size: 48px;
+    position: fixed;
+    right: 18px;
+    bottom: 36px;
+    height: 37px;
+    overflow: hidden;
+}
+
+.floatingTop a {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+
  header > div.right{
  	display: flex;
  	flex-direction: column;
@@ -98,21 +113,28 @@ i{
     box-sizing: border-box;
 
 }
+
+
 img{
 	width: 100px;height: 100px;
 }
+
+
 .img{
 	padding-left: 0%;
 	margin-top: 8%;
 	margin-left: 8%;
 	box-sizing: border-box;
 }
+
+
 .follower{
 	padding-left: 10%;
 	margin-top: 8%;
 	box-sizing: border-box;
 
 }
+
 
 a{
 	text-decoration: none;
