@@ -61,3 +61,22 @@ text-decoration: none;
 	text-decoration:none;
 	font-size:16px;
 }
+
+
+#email{
+  background-color: white;
+  list-style: none;
+    li {
+      border: 1px solid black;
+      max-width: 300px;
+    }
+
+    li:hover{
+      background-color: lightgoldenrodyellow;
+    }
+}
+
+
+.ui-helper-hidden-accessible{
+  display:none;
+}

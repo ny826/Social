@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
-  
+  autocomplete :user, :email
+
+
   def index
   	 # @tweet=Tweet.all
     @tweet = Tweet.includes(:user).all.order(created_at: :desc).limit(50)
@@ -9,7 +11,9 @@ class HomeController < ApplicationController
   def create
   	content=params[:content];
   	current_user.tweets.create(:content=>content);
+    Usernotifier.create_tweet(@current_user).deliver_now!
   	return redirect_to '/';
+
   end
 
   def like

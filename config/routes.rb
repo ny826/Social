@@ -28,5 +28,14 @@ Rails.application.routes.draw do
 
   get '/view_feedback'=>'home#view_feedback'
 
+
+  get '/autocomplete_user_email' => 'home#autocomplete_user_email'
   
+
+  namespace :api do
+     namespace :v1 do
+       post '/sign_in' => 'users_api#sign_in'
+     end
+   end
+ 
 end
