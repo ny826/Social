@@ -9,11 +9,30 @@ class HomeController < ApplicationController
   end
 
   def create
-  	content=params[:content];
-  	current_user.tweets.create(:content=>content);
-    Usernotifier.create_tweet(@current_user).deliver_now!
-  	return redirect_to '/';
+    # byebug
+  	@content=params[:content];
+    if @content.length>0
+  	@tweet=current_user.tweets.create(:content=>@content);
+    end
+    # Usernotifier.create_tweet(@current_user).deliver_now!
+    respond_to do |format|
+      format.js{
 
+      }
+    end
+
+return redirect_to '/'
+  end
+
+  def create_tweet_remote
+    content=params[:content];
+    @tweet=current_user.tweets.create(:content=>content);
+    Usernotifier.create_tweet(@current_user).deliver_now!
+    respond_to do |format|
+            format.js{
+
+              }
+    end
   end
 
   def like

@@ -1,13 +1,12 @@
 
 <div class="create_tweet">
-<%= form_tag '/create' do%>
+  <%= form_tag '/create',remote: true do %>
 <%= text_area_tag :content,@content,:size =>"80x4", :placeholder => 'Add your Story Here'%><br>
 <%= submit_tag 'Tweet'%>
 <span id="letter"></span>
 <%end%>
 </div>
 <br>
-
 
 
 <div class="search">

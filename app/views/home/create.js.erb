@@ -1,0 +1,23 @@
+<% puts "hello"%>
+
+
+<% puts "@content.length"%>
+console.log(<%= @content.length%>);
+
+var error=true;
+if(@content.length>0)
+    error=false;
+end
+
+console.log(error)
+
+
+if (error==true){
+    noty({text: "Tweet cannot be blank", theme: "relax", type: 'failure', layout: 'topRight'});
+}
+else{
+    noty({text: "Successfully Created Tweet", theme: "relax", type: 'success', layout: 'topRight'});
+}
+
+
+return redirect_to '/'

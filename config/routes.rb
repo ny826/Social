@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get '/view_feedback'=>'home#view_feedback'
 
 
+  post '/create_tweet_remote' => 'home#create_tweet_remote'
+
   get '/autocomplete_user_email' => 'home#autocomplete_user_email'
   
 
