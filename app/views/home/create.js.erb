@@ -5,9 +5,9 @@
 console.log(<%= @content.length%>);
 
 var error=true;
-if(@content.length>0)
+<% if(@content.length>0) %>
     error=false;
-end
+<% end %>
 
 console.log(error)
 
@@ -18,6 +18,3 @@ if (error==true){
 else{
     noty({text: "Successfully Created Tweet", theme: "relax", type: 'success', layout: 'topRight'});
 }
-
-
-return redirect_to '/'

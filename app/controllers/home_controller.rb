@@ -20,8 +20,6 @@ class HomeController < ApplicationController
 
       }
     end
-
-return redirect_to '/'
   end
 
   def create_tweet_remote
