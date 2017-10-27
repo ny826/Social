@@ -20,10 +20,10 @@
 
 
 <% if @tweet%>
-    <ul>
+    <ol>
 	<% @tweet.each do |tweet|%>
 	<li><%= render 'tweet',:tweet=>tweet%></li>
 	<%end%>
-	</ul>
+	</ol>
 <%end%>
 
